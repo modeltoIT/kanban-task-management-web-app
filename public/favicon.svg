@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" width="32" height="32" viewBox="0 0 128 128" id="kanbanboard">
+  <rect width="97" height="97" x="113" y="113" stroke="#635FC7" stroke-width="7" rx="27" transform="rotate(-180 113 113)" class="colorStroke000000 svgStroke"></rect>
+  <path stroke="#635FC7" stroke-linecap="round" stroke-width="7" d="M65 37L65 63M86 37L86 77M44 37L44 88" class="colorStroke000000 svgStroke"></path>
+</svg>
