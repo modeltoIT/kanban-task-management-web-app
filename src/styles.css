@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn-primary-large {
+    @apply bg-purple rounded-3xl text-heading-m text-center text-white block py-[15px];
+  }
+
+  .btn-primary-hover-large {
+    @apply bg-purple-hover rounded-3xl text-heading-m text-center text-white block py-[15px];
+  }
+
+  .btn-primary-small{
+    @apply bg-purple rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
+  }
+
+  .btn-primary-hover-small {
+    @apply bg-purple-hover rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
+  }
+
+  .btn-secondary-light {
+    @apply bg-purple/[.1] rounded-[20px] text-body-l font-bold text-center text-purple block py-[9px];
+  }
+
+  .btn-secondary-hover-light {
+    @apply bg-purple/[.25] rounded-[20px] text-body-l font-bold text-center text-purple block py-[9px];
+  }
+
+  .btn-secondary-dark {
+    @apply bg-white rounded-[20px] text-body-l font-bold text-center text-purple block py-[9px];
+  }
+
+  .btn-red {
+    @apply bg-red rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
+  }
+
+  .btn-red-hover {
+    @apply bg-red-hover rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
+  }
+}
