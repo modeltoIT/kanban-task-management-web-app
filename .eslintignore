@@ -1,0 +1,2 @@
+# don’t lint the main HTML entrypoint
+src/index.html

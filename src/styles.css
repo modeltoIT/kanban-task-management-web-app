@@ -11,7 +11,7 @@
     @apply bg-purple-hover rounded-3xl text-heading-m text-center text-white block py-[15px];
   }
 
-  .btn-primary-small{
+  .btn-primary-small {
     @apply bg-purple rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
   }
 
