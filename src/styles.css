@@ -4,27 +4,27 @@
 
 @layer components {
   .btn-primary-large {
-    @apply bg-purple rounded-3xl text-heading-m text-center text-white block py-[15px];
+    @apply bg-purple rounded-3xl text-heading-m text-center text-white py-[15px] transition-colors duration-200 ease-out;
   }
 
-  .btn-primary-hover-large {
-    @apply bg-purple-hover rounded-3xl text-heading-m text-center text-white block py-[15px];
+  .btn-primary-large:hover {
+    @apply bg-purple-hover;
   }
 
   .btn-primary-small {
     @apply bg-purple rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
   }
 
-  .btn-primary-hover-small {
-    @apply bg-purple-hover rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
+  .btn-primary-small:hover {
+    @apply bg-purple-hover;
   }
 
   .btn-secondary-light {
     @apply bg-purple/[.1] rounded-[20px] text-body-l font-bold text-center text-purple block py-[9px];
   }
 
-  .btn-secondary-hover-light {
-    @apply bg-purple/[.25] rounded-[20px] text-body-l font-bold text-center text-purple block py-[9px];
+  .btn-secondary-light:hover {
+    @apply bg-purple/[.25];
   }
 
   .btn-secondary-dark {
@@ -35,7 +35,7 @@
     @apply bg-red rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
   }
 
-  .btn-red-hover {
-    @apply bg-red-hover rounded-[20px] text-body-l font-bold text-center text-white block py-[9px];
+  .btn-red:hover {
+    @apply bg-red-hover;
   }
 }

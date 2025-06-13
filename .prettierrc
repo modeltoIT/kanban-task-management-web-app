@@ -6,7 +6,8 @@
   "bracketSpacing": true,
   "arrowParens": "avoid",
   "trailingComma": "es5",
-  "bracketSameLine": true,
+  "bracketSameLine": false,
   "printWidth": 100,
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "singleAttributePerLine": true,
 }

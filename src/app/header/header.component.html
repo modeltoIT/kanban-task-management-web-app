@@ -1,5 +1,48 @@
-<header class="h-24 bg-dark-grey-bg">
-  <a href="/" class="inline-block">
-    <img ngSrc="/assets/logo-light.svg" width="153" height="26" alt="Kanban logo" />
+<header
+  class="flex items-center bg-dark-grey tablet:border-b border-dark-lines  h-16 tablet:h-20 laptop:h-24 pl-4 pr-3 tablet:pl-6 laptop:pr-5"
+>
+  <a
+    href="/"
+    class="flex items-center tablet:pb-[5px] tablet:pr-6 laptop:pr-8 tablet:border-r border-dark-lines h-full"
+  >
+    <picture class="relative min-w-[25px] w-[25px] h-[26px] tablet:w-[153px] tablet:h-[26px]">
+      <!-- mobile logo when viewport ≤ 768px -->
+      <source
+        media="(max-width: 767px)"
+        srcset="/assets/logo-mobile.svg"
+      />
+      <!-- fallback / desktop logo -->
+      <img
+        ngSrc="/assets/logo-light.svg"
+        alt="Kanban logo"
+        priority
+        fill
+      />
+    </picture>
   </a>
+
+  <div class="flex items-center justify-between flex-1 pl-4 tablet:pl-6 laptop:pl-8">
+    <p class="flex gap-2 items-center text-heading-l tablet:text-heading-xl text-white">
+      <span>Platform Launch</span>
+      <tui-icon
+        icon="@tui.icon-chevron-down"
+        class="w-2.5 h-[7px] text-purple tablet:hidden"
+      />
+    </p>
+
+    <div class="flex justify-between gap-2.5 items-center">
+      <button
+        class="btn-primary-large hover:btn-primary-large-hover flex items-center gap-1 justify-center mr-auto py-2.5 tablet:py-[15px] w-12 tablet:w-[164px] disabled:opacity-25"
+      >
+        <tui-icon [icon]="TUI_ICONS.ADD_TASK" class="w-3 h-3 tablet:w-2 tablet:h-2"></tui-icon>
+        <span class="hidden tablet:inline-block">Add New Task</span>
+      </button>
+
+      <button
+        class="flex items-center rounded-md justify-center w-4 tablet:w-8 h-8 tablet:h-12 hover:bg-dark-lines hover:bg-opacity-70"
+      >
+        <tui-icon [icon]="TUI_ICONS.VERTICAL_ELLIPSIS" class="h-4 tablet:h-5 text-grey-m"></tui-icon>
+      </button>
+    </div>
+  </div>
 </header>
