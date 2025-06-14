@@ -1,6 +1,7 @@
 export const TUI_ICONS = {
   ADD_TASK: '@tui.icon-add-task-mobile',
   BOARD: '@tui.icon-board',
+  PANEL_LEFT: '@tui.panel-left',
   CHECK: '@tui.icon-check',
   CHEVRON_DOWN: '@tui.icon-chevron-down',
   CHEVRON_UP: '@tui.icon-chevron-up',

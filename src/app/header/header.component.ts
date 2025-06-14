@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { TuiIcon } from '@taiga-ui/core';
-import { TUI_ICONS } from '../../shared/icons';
+import { TUI_ICONS } from '../shared/icons';
 
 @Component({
   selector: 'app-header',

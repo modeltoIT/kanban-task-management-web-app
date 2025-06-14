@@ -33,6 +33,9 @@ export default {
         tablet: '768px',
         laptop: '1024px',
       },
+      gridTemplateColumns: {
+        'header': 'max-content 1fr'
+      }
     },
   },
   plugins: [],
