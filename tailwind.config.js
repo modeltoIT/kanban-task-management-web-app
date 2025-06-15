@@ -46,6 +46,9 @@ export default {
       gridTemplateColumns: {
         header: 'max-content 1fr',
       },
+      gridTemplateRows: {
+        main: 'max-content 1fr'
+      }
     },
   },
   plugins: [],

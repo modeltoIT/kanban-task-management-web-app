@@ -1,12 +1,10 @@
-import { Component, input } from '@angular/core';
-import { NgOptimizedImage } from "@angular/common";
+import { Component } from '@angular/core';
 import { MenuBoardsComponent } from './menu-boards/menu-boards.component';
+import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-aside',
-  imports: [NgOptimizedImage, MenuBoardsComponent],
+  imports: [MenuBoardsComponent, ThemeToggleComponent],
   templateUrl: './aside.component.html',
 })
-export class AsideComponent {
-  isSideBarOpen = input(true);
-}
+export class AsideComponent {}

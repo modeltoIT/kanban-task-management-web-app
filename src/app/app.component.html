@@ -1,4 +1,7 @@
-<div class="grid grid-cols-header">
-  <app-aside />
-  <app-header />
+<div class="grid grid-cols-header grid-rows-main h-screen">
+  <app-header class="col-span-2" />
+
+  @if (isSideBarOpen()) {
+    <app-aside />
+  }
 </div>

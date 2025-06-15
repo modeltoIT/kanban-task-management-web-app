@@ -1,29 +1,7 @@
-<aside class="bg-dark-grey w-[300px]">
-  <div class="tablet:border-b border-dark-lines h-16 tablet:h-20 laptop:h-24 pl-4 tablet:pl-8">
-    <a
-      href="/"
-      class="flex items-center tablet:pb-[5px] tablet:border-r border-dark-lines h-full"
-    >
-      <picture class="relative min-w-[25px] w-[25px] h-[26px] tablet:w-[153px] tablet:h-[26px]">
-        <!-- mobile logo when viewport ≤ 768px -->
-        <source
-          media="(max-width: 767px)"
-          srcset="/assets/logo-mobile.svg"
-        />
-        <!-- fallback / desktop logo -->
-        <img
-          ngSrc="/assets/logo-light.svg"
-          alt="Kanban logo"
-          priority
-          fill
-        />
-      </picture>
-    </a>
-  </div>
-  @if (isSideBarOpen()) {
-    <!--// TODO: remove h-screen-->
-    <div class="border-r border-dark-lines h-screen pr-6">
-      <app-menu-boards />
-    </div>
-  }
+<!--Implement resize changing w-[300px] to width="someWidth" connect to header logo--->
+<aside
+  class="flex flex-col justify-between border-r border-dark-lines bg-dark-grey w-[300px] h-full pr-6"
+>
+  <app-menu-boards />
+  <app-theme-toggle />
 </aside>
