@@ -1,12 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js}'],
+  safelist: [
+    'bg-purple',
+    'hover:bg-purple-hover',
+    'hover:bg-purple-hover/35',
+    'hover:text-white',
+    'hover:text-purple-hover',
+    'text-white',
+    'text-grey-m',
+    'text-purple',
+  ],
   theme: {
     extend: {
       colors: {
         purple: '#635FC7',
         'purple-hover': '#A8A4FF',
-        'black': '#000112',
+        black: '#000112',
         'dark-grey-bg': '#20212C',
         'light-grey-bg': '#F4F7FD',
         'dark-grey': '#2B2C37',
@@ -34,8 +44,8 @@ export default {
         laptop: '1024px',
       },
       gridTemplateColumns: {
-        'header': 'max-content 1fr'
-      }
+        header: 'max-content 1fr',
+      },
     },
   },
   plugins: [],

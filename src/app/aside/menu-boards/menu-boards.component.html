@@ -1,7 +1,10 @@
-<div class="flex flex-col gap-5 mt-4">
+<div class="flex flex-col gap-5 mt-5">
   <h2 class="uppercase pl-8 text-grey-m text-heading-s">All boards ({{bordersCount}})</h2>
 <nav>
-  <app-btn-board btnTitle="Platform Launch"/>
+  <app-btn-board [btnTitle]="'Platform Launch'" [isActive]="true"/>
+  <app-btn-board [btnTitle]="'Marketing Plan'" [isActive]="false"/>
+  <app-btn-board [btnTitle]="'Roadmap'" [isActive]="false"/>
+  <app-btn-board [btnTitle]="'Create New Board'" [isActive]="false" [isActionBtn]="true"/>
 </nav>
 </div>
 

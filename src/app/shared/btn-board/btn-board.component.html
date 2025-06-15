@@ -1,1 +1,19 @@
-<a href="" class="flex items-center gap-4 text-heading-m text-white bg-purple rounded-r-[100px] pl-8 py-4"><tui-icon [icon]="TUI_ICONS.BOARD" class="w-4 h-4" /> {{btnTitle()}}</a>
+<a
+  href=""
+  class="flex items-center gap-4 text-heading-m text-white rounded-r-[100px] pl-8 py-4 transition duration-200 ease-out"
+  [ngClass]="linkClass"
+>
+  <tui-icon
+    [icon]="TUI_ICONS.BOARD"
+    class="w-4 h-4"
+  />
+  <span class="flex items-center gap-1">
+    @if (isActionBtn()) {
+      <tui-icon
+        [icon]="TUI_ICONS.ADD_TASK"
+        Class="w-2 h-2"
+      />
+    }
+    {{ btnTitle() }}
+  </span>
+</a>
