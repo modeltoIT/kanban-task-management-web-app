@@ -48,3 +48,10 @@
   font-style: normal;
   font-display: swap;
 }
+
+
+:root {
+  --tui-primary: #1e40af;
+  --tui-primary-hover: #1d4ed8;
+  --tui-radius: 12px;
+}

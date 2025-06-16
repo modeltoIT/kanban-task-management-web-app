@@ -1,7 +1,9 @@
-<div class="grid grid-cols-header grid-rows-main h-screen">
-  <app-header class="col-span-2" />
+<tui-root>
+  <div class="grid grid-cols-header grid-rows-main h-screen">
+    <app-header class="col-span-2" />
 
-  @if (isSideBarOpen()) {
-    <app-aside />
-  }
-</div>
+    @if (isSideBarOpen()) {
+      <app-aside />
+    }
+  </div>
+</tui-root>
