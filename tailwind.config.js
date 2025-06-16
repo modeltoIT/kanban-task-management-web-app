@@ -10,6 +10,10 @@ export default {
     'text-white',
     'text-grey-m',
     'text-purple',
+    'pl-8',
+    'px-2',
+    'rounded-[100px]',
+    'rounded-r-[100px]'
   ],
   theme: {
     extend: {

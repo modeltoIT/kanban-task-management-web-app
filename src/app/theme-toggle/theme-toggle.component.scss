@@ -1,5 +1,16 @@
 @use '@taiga-ui/core/styles/taiga-ui-local.scss';
 
-:host {
-  --tui-primary: red;
+:host{
+  --tui-height-m: 2rem;
+}
+[tuiSwitch].btn-theme-toggle {
+  --bg-purple: #635FC7;
+
+  --t-bg: var(--bg-purple);
+  --tui-background-accent-1: var(--bg-purple);
+  --tui-background-accent-1-hover: var(--bg-purple);
+  --tui-background-accent-1-pressed: var(--bg-purple);
+  --tui-background-neutral-1: var(--bg-purple);
+  --tui-background-neutral-1-hover: var(--bg-purple);
+  --tui-background-neutral-1-pressed: var(--bg-purple);
 }

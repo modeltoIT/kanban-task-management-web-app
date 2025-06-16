@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { TuiIcon } from '@taiga-ui/core';
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { TUI_ICONS } from '../icons';
 
 @Component({
@@ -11,23 +11,24 @@ import { TUI_ICONS } from '../icons';
 export class BtnBoardComponent {
   protected readonly TUI_ICONS = TUI_ICONS;
   btnTitle = input.required<string>();
-  isActive = input.required<boolean>();
+  isActive = input<boolean>(false);
   isActionBtn = input<boolean>(false);
+  isHideBtn = input<boolean>(false);
 
   get linkClass() {
-    const active = this.isActive();
-    const action = this.isActionBtn();
-
-
     return {
-      'bg-purple': active,
-      'hover:bg-purple-hover': !active && !action,
-      'hover:bg-purple-hover/35': !active && !action,
-      'hover:text-white': !action,
-      'hover:text-purple-hover': action,
-      'text-white': active,
-      'text-grey-m': !active && !action,
-      'text-purple': action,
-    }
+      'pl-8': !this.isHideBtn(),
+      'px-2': this.isHideBtn(),
+      'rounded-r-[100px]': !this.isHideBtn(),
+      'rounded-[100px]': this.isHideBtn(),
+      'bg-purple': this.isActive(),
+      'text-white': this.isActive(),
+      'text-grey-m': this.isHideBtn() || (!this.isActive() && !this.isActionBtn()),
+      'text-purple': this.isActionBtn() && !this.isHideBtn(),
+      'hover:bg-purple-hover': !this.isActive() && !this.isActionBtn(),
+      'hover:bg-purple-hover/35': !this.isActive() && !this.isActionBtn(),
+      'hover:text-white': !this.isActionBtn(),
+      'hover:text-purple-hover': this.isActionBtn(),
+    };
   }
 }
