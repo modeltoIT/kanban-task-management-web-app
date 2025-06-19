@@ -17,8 +17,12 @@ export class BtnBoardComponent {
 
   get linkClass() {
     return {
-      'pl-8': !this.isHideBtn(),
-      'px-2': this.isHideBtn(),
+      'laptop:pl-8': !this.isHideBtn(),
+      'pl-4': !this.isHideBtn(),
+      'tablet:pl-6': !this.isHideBtn(),
+      'laptop:px-2': this.isHideBtn(),
+      'px-1': this.isHideBtn(),
+      'tablet:px-3': this.isHideBtn(),
       'rounded-r-[100px]': !this.isHideBtn(),
       'rounded-[100px]': this.isHideBtn(),
       'bg-purple': this.isActive(),
