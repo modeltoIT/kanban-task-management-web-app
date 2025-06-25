@@ -1,5 +1,9 @@
-<div class="flex flex-col gap-2 tablet:gap-4 laptop:gap-2 justify-center items-center mx-3 laptop:mx-6">
-  <div class="flex gap-5 justify-center items-center text-grey-m bg-dark-grey-bg rounded-md w-full h-12">
+<div
+  class="flex flex-col gap-2 tablet:gap-4 laptop:gap-2 justify-center items-center mx-3 laptop:mx-6"
+>
+  <div
+    class="flex gap-5 justify-center items-center text-grey-m bg-dark-grey-bg rounded-md w-full h-12"
+  >
     <tui-icon
       [icon]="TUI_ICONS.LIGHT_THEME"
       class="w-[18px] h-[18px]"
@@ -8,7 +12,7 @@
       tuiSwitch
       name="but-theme-toggle"
       type="checkbox"
-      [ngModel]="true"
+      [formControl]="btnThemeSwitch"
       [showIcons]="false"
       class="btn-theme-toggle scale-[0.84]"
     />

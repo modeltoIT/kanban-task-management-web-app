@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { TuiIcon } from '@taiga-ui/core';
-import { NgClass, NgStyle } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { TUI_ICONS } from '../icons';
 
 @Component({
