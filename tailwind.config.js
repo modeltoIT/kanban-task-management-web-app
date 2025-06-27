@@ -1,10 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{html,js}'],
+  darkMode: 'selector',
+  content: ['./src/**/*.{html,js,ts}'],
   safelist: [
     'bg-purple',
     'hover:bg-purple-hover',
-    'hover:bg-purple-hover/35',
+    'hover:text-purple-2',
     'hover:text-white',
     'hover:text-purple-hover',
     'text-white',
@@ -23,6 +24,7 @@ export default {
     extend: {
       colors: {
         purple: '#635FC7',
+        'purple-2': '#827fd2',
         'purple-hover': '#A8A4FF',
         black: '#000112',
         'dark-grey-bg': '#20212C',
@@ -45,7 +47,7 @@ export default {
         'body-m': ['12px', { fontWeight: '700', lineHeight: '15px' }],
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        body: ['Plus Jakarta Sans', 'sans-serif'],
       },
       screens: {
         tablet: '768px',

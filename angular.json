@@ -39,7 +39,7 @@
             "styles": [
               "@taiga-ui/core/styles/taiga-ui-theme.less",
               "@taiga-ui/core/styles/taiga-ui-fonts.less",
-              "src/tailwind-styles.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -99,7 +99,7 @@
             "styles": [
               "@taiga-ui/core/styles/taiga-ui-theme.less",
               "@taiga-ui/core/styles/taiga-ui-fonts.less",
-              "src/tailwind-styles.css"
+              "src/styles.css"
             ],
             "scripts": []
           }

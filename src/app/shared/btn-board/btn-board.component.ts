@@ -30,9 +30,8 @@ export class BtnBoardComponent {
       'text-grey-m': this.isHideBtn() || (!this.isActive() && !this.isActionBtn()),
       'text-purple': this.isActionBtn() && !this.isHideBtn(),
       'hover:bg-purple-hover': !this.isActive() && !this.isActionBtn(),
-      'hover:bg-purple-hover/35': !this.isActive() && !this.isActionBtn(),
       'hover:text-white': !this.isActionBtn(),
-      'hover:text-purple-hover': this.isActionBtn(),
+      'hover:text-purple-2': this.isActionBtn(),
     };
   }
 }

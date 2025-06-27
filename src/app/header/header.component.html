@@ -1,12 +1,12 @@
 <header
-  class="fixed top-0 left-0 right-0 z-30 flex items-center bg-dark-grey tablet:border-b border-dark-lines h-16 tablet:h-20 laptop:h-24 pr-3 tablet:pr-6"
+  class="fixed top-0 left-0 right-0 z-30 flex items-center bg-white dark:bg-dark-grey tablet:border-b border-light-lines dark:border-dark-lines h-16 tablet:h-20 laptop:h-24 pr-3 tablet:pr-6"
 >
   <!--  Change from a to div?-->
   <!--Implement resize changing w-[300px] to width="someWidth" connect to aside component--->
   <a
     href="/"
     tabindex="-1"
-    class="flex items-center tablet:pb-[5px] tablet:w-[261px] laptop:w-[300px] tablet:border-r border-dark-lines h-full pl-4 tablet:pl-8"
+    class="flex items-center tablet:pb-[5px] tablet:w-[261px] laptop:w-[300px] tablet:border-r border-light-lines dark:border-dark-lines h-full pl-4 tablet:pl-8"
   >
     <picture class="relative min-w-[25px] w-[25px] h-[26px] tablet:w-[153px] tablet:h-[26px]">
       <!-- mobile logo when viewport ≤ 768px -->
@@ -16,7 +16,7 @@
       />
       <!-- fallback / desktop logo -->
       <img
-        ngSrc="/assets/logo-light.svg"
+        [ngSrc]="`/assets/logo-${theme}-theme.svg`"
         alt="Kanban logo"
         priority
         fill
@@ -24,7 +24,9 @@
     </picture>
   </a>
   <div class="flex items-center justify-between flex-1 pl-4 tablet:pl-6 laptop:pl-8">
-    <p class="flex gap-1 items-center text-heading-l tablet:text-heading-xl text-white">
+    <p
+      class="flex gap-1 items-center text-heading-l tablet:text-heading-xl text-black dark:text-white"
+    >
       <span>Platform Launch</span>
 
       <tui-icon
