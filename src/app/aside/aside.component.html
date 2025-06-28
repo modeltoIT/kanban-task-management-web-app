@@ -1,18 +1,29 @@
 <!--Implement resize changing w-[300px] to width="someWidth" connect to header logo--->
-<aside
-  class="fixed top-16 bottom-0 left-0 z-20 overflow-y-auto flex flex-col justify-between border-r border-light-lines dark:border-dark-lines bg-white dark:bg-dark-grey w-[260px] tablet:w-[261px] laptop:w-[300px] pt-6 tablet:pt-9 laptop:pt-[52px] pb-5 tablet:pb-8"
->
-  <app-menu-boards />
+<ng-container>
+  <aside
+    class="fixed top-16 bottom-0 left-0 z-20 overflow-y-auto flex flex-col justify-between border-r border-light-lines dark:border-dark-lines bg-white dark:bg-dark-grey w-[260px] tablet:w-[261px] laptop:w-[300px] pt-6 tablet:pt-9 laptop:pt-[52px] pb-5 tablet:pb-8 transition-transform duration-200 ease-in"
+    [ngClass]="{
+      '-translate-x-full': !isAsideOpen,
+    }"
+  >
+    <app-menu-boards />
 
-  <div class="flex flex-col gap-2 tablet:gap-4 laptop:gap-2 justify-center mx-3 mt-8 laptop:mx-6">
-    <app-theme-toggle />
+    <div class="flex flex-col gap-2 tablet:gap-4 laptop:gap-2 justify-center mx-3 mt-8 laptop:mx-6">
+      <app-theme-toggle />
 
-    <div class="inline-block self-start">
-      <app-btn-board
-        btnTitle="Hide Sidebar"
-        [isHideBtn]="true"
-        [isActionBtn]="true"
-      />
+      <div class="inline-block self-start">
+        <app-btn-board
+          btnTitle="Hide Sidebar"
+          [isHideBtn]="true"
+          [isActionBtn]="true"
+          (close)="onHideAside()"
+        />
+      </div>
     </div>
-  </div>
-</aside>
+  </aside>
+
+  <app-aside-btn-open
+    [isAsideOpen]="isAsideOpen"
+    (open)="onOpenAside()"
+  />
+</ng-container>

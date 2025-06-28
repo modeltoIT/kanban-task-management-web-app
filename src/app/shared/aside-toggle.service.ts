@@ -2,31 +2,35 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class ToggleAsideService {
+export class AsideToggleService {
   private isAsideOpen = new BehaviorSubject(true);
   isAsideOpen$ = this.isAsideOpen.asObservable();
 
   constructor() {
-    this.init()
+    this.init();
   }
 
   init() {
     const stored = window.localStorage.getItem('isMenuOpen');
 
-    if (stored !== null) this.isAsideOpen.next(Boolean(stored));
+    if (stored !== null) this.isAsideOpen.next(stored === 'true');
+  }
+
+  isOpen() {
+    return this.isAsideOpen.getValue();
   }
 
   open() {
     this.isAsideOpen.next(true);
 
-    window.localStorage.setItem('isMenuOpen', 'true')
+    window.localStorage.setItem('isMenuOpen', 'true');
   }
 
   close() {
     this.isAsideOpen.next(false);
 
-    window.localStorage.setItem('isMenuOpen', 'false')
+    window.localStorage.setItem('isMenuOpen', 'false');
   }
 }

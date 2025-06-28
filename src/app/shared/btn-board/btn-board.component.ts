@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { TuiIcon } from '@taiga-ui/core';
 import { NgClass } from '@angular/common';
 import { TUI_ICONS } from '../icons';
@@ -9,11 +9,14 @@ import { TUI_ICONS } from '../icons';
   imports: [TuiIcon, NgClass],
 })
 export class BtnBoardComponent {
-  protected readonly TUI_ICONS = TUI_ICONS;
+  hideAside = output<boolean>({ alias: 'close' });
+
   btnTitle = input.required<string>();
   isActive = input<boolean>(false);
   isActionBtn = input<boolean>(false);
   isHideBtn = input<boolean>(false);
+
+  readonly TUI_ICONS = TUI_ICONS;
 
   get linkClass() {
     return {
@@ -33,5 +36,13 @@ export class BtnBoardComponent {
       'hover:text-white': !this.isActionBtn(),
       'hover:text-purple-2': this.isActionBtn(),
     };
+  }
+
+  onClick() {
+    if (this.isHideBtn()) this.onHideAside();
+  }
+
+  private onHideAside() {
+    this.hideAside.emit(false);
   }
 }
