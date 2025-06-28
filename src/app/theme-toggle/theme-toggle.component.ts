@@ -2,13 +2,12 @@ import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { TuiSwitch } from '@taiga-ui/kit';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TUI_ICONS } from '../shared/icons';
-import { BtnBoardComponent } from '../shared/btn-board/btn-board.component';
 import { TuiIcon } from '@taiga-ui/core';
 import { Theme, ThemeService } from '../shared/theme.service';
 
 @Component({
   selector: 'app-theme-toggle',
-  imports: [TuiSwitch, FormsModule, BtnBoardComponent, ReactiveFormsModule, TuiIcon],
+  imports: [TuiSwitch, FormsModule, ReactiveFormsModule, TuiIcon],
   templateUrl: './theme-toggle.component.html',
   styleUrl: 'theme-toggle.component.scss',
 })
