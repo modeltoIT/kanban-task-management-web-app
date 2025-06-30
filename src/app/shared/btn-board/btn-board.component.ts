@@ -9,7 +9,7 @@ import { TUI_ICONS } from '../icons';
   imports: [TuiIcon, NgClass],
 })
 export class BtnBoardComponent {
-  hideAside = output<boolean>({ alias: 'close' });
+  hideAside = output<void>({ alias: 'close' });
 
   btnTitle = input.required<string>();
   isActive = input<boolean>(false);
@@ -43,6 +43,6 @@ export class BtnBoardComponent {
   }
 
   private onHideAside() {
-    this.hideAside.emit(false);
+    this.hideAside.emit();
   }
 }

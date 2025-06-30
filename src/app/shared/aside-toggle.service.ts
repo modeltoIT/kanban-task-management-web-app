@@ -22,15 +22,11 @@ export class AsideToggleService {
     return this.isAsideOpen.getValue();
   }
 
-  open() {
-    this.isAsideOpen.next(true);
+  toggle() {
+    const isOpen = !this.isOpen();
 
-    window.localStorage.setItem('isMenuOpen', 'true');
-  }
+    this.isAsideOpen.next(isOpen)
 
-  close() {
-    this.isAsideOpen.next(false);
-
-    window.localStorage.setItem('isMenuOpen', 'false');
+    window.localStorage.setItem('isMenuOpen', `${isOpen}`);
   }
 }

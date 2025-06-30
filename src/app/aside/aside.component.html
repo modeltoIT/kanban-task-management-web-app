@@ -16,7 +16,7 @@
           btnTitle="Hide Sidebar"
           [isHideBtn]="true"
           [isActionBtn]="true"
-          (close)="onHideAside()"
+          (close)="toggleSideMenu()"
         />
       </div>
     </div>
@@ -24,6 +24,6 @@
 
   <app-aside-btn-open
     [isAsideOpen]="isAsideOpen"
-    (open)="onOpenAside()"
+    (open)="toggleSideMenu()"
   />
 </ng-container>
