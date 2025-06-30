@@ -15,7 +15,7 @@ export class AsideBtnOpenComponent {
 
   readonly TUI_ICONS = TUI_ICONS;
 
-  onClick() {
+  openSideMenu() {
     this.openAside.emit();
   }
 }

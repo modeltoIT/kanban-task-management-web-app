@@ -3,14 +3,14 @@ import { TuiRoot } from '@taiga-ui/core';
 import { HeaderComponent } from './header/header.component';
 import { AsideComponent } from './aside/aside.component';
 import { AsideToggleService } from './shared/aside-toggle.service';
-import { AsyncPipe, NgClass } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [HeaderComponent, AsideComponent, TuiRoot, AsyncPipe, NgClass],
+  imports: [HeaderComponent, AsideComponent, TuiRoot, NgClass],
 })
 export class AppComponent implements OnInit {
   asideToggleService = inject(AsideToggleService);

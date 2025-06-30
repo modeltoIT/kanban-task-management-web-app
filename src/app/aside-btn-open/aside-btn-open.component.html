@@ -1,11 +1,10 @@
 <button
   class="hidden tablet:block fixed z-10 bottom-8 left-0 w-14 h-12 text-white bg-purple hover:bg-purple-hover rounded-r-full shadow-sm hover:shadow-lg transition-all"
   [ngClass]="{
-    'opacity-0': !isAsideOpen,
-    'duration-50': !isAsideOpen,
-    'pointer-events-none': !isAsideOpen,
+    'opacity-0': isAsideOpen(),
+    'pointer-events-none': isAsideOpen(),
   }"
-  (click)="onClick()"
+  (click)="openSideMenu()"
 >
   <tui-icon
     [icon]="TUI_ICONS.SHOW_SIDEBAR"

@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { MenuBoardsComponent } from './menu-boards/menu-boards.component';
 import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
 import { BtnBoardComponent } from '../shared/btn-board/btn-board.component';
@@ -21,11 +21,11 @@ export class AsideComponent implements OnInit {
   asideToggleService = inject(AsideToggleService);
   destroyRef = inject(DestroyRef);
 
-  isAsideOpen = this.asideToggleService.isOpen();
+  isAsideOpen = signal(this.asideToggleService.isOpen());
 
   ngOnInit() {
     const subscription = this.asideToggleService.isAsideOpen$.subscribe(isOpen => {
-      this.isAsideOpen = isOpen;
+      this.isAsideOpen.set(isOpen);
     });
 
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
