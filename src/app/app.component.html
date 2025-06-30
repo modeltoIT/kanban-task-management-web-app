@@ -2,11 +2,16 @@
   <div class="grid grid-cols-header grid-rows-main h-screen">
     <app-header class="col-span-2" />
 
-    @if (isSideBarOpen()) {
-      <app-aside />
-      <div
-        class="fixed tablet:hidden z-10 left-0 top-0 bottom-0 right-0 h-full bg-gray-900/50 dark:bg-gray-900/80"
-      ></div>
-    }
+    <app-aside />
+
+    <div
+      class="fixed tablet:hidden z-10 left-0 top-0 bottom-0 right-0 h-full bg-gray-900/50 dark:bg-gray-900/80 transition-opacity duration-200"
+      [ngClass]="{
+        'opacity-0': !isSideMenuOpen,
+        'pointer-events-none': !isSideMenuOpen,
+        'opacity-100': isSideMenuOpen,
+      }"
+      (click)="closeSideMenu()"
+    ></div>
   </div>
 </tui-root>

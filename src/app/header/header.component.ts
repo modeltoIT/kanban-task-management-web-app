@@ -1,27 +1,43 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { TuiIcon } from '@taiga-ui/core';
 import { TUI_ICONS } from '../shared/icons';
-import { NgOptimizedImage } from '@angular/common';
+import { NgClass, NgOptimizedImage } from '@angular/common';
 import { ThemeService } from '../shared/theme.service';
+import { AsideToggleService } from '../shared/aside-toggle.service';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-header',
-  imports: [TuiIcon, NgOptimizedImage],
+  imports: [TuiIcon, NgOptimizedImage, NgClass],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit {
-  protected readonly TUI_ICONS = TUI_ICONS;
-
+  asideToggleService = inject(AsideToggleService);
   themeService = inject(ThemeService);
-  theme = this.themeService.currentTheme;
-
   destroyRef = inject(DestroyRef);
 
+  theme = this.themeService.currentTheme;
+  isSideMenuOpen = this.asideToggleService.isOpen();
+
+  protected readonly TUI_ICONS = TUI_ICONS;
+
   ngOnInit() {
-    const subscription = this.themeService.themeMode.subscribe(theme => {
+    this.themeService.themeMode.pipe(takeUntilDestroyed(this.destroyRef)).subscribe(theme => {
       this.theme = theme;
     });
 
-    this.destroyRef.onDestroy(() => subscription.unsubscribe());
+    this.asideToggleService.isAsideOpen$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(isOpen => {
+        this.isSideMenuOpen = isOpen;
+      });
+  }
+
+  openSideMenu() {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth >= 768) return;
+
+    this.asideToggleService.toggle();
   }
 }

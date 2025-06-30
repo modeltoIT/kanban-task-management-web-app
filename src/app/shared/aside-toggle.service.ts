@@ -25,7 +25,7 @@ export class AsideToggleService {
   toggle() {
     const isOpen = !this.isOpen();
 
-    this.isAsideOpen.next(isOpen)
+    this.isAsideOpen.next(isOpen);
 
     window.localStorage.setItem('isMenuOpen', `${isOpen}`);
   }

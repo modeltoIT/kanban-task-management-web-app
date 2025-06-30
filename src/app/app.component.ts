@@ -1,14 +1,32 @@
-import { Component, input } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { TuiRoot } from '@taiga-ui/core';
 import { HeaderComponent } from './header/header.component';
 import { AsideComponent } from './aside/aside.component';
+import { AsideToggleService } from './shared/aside-toggle.service';
+import { AsyncPipe, NgClass } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [HeaderComponent, AsideComponent, TuiRoot],
+  imports: [HeaderComponent, AsideComponent, TuiRoot, AsyncPipe, NgClass],
 })
-export class AppComponent {
-  isSideBarOpen = input(true);
+export class AppComponent implements OnInit {
+  asideToggleService = inject(AsideToggleService);
+  destroyRef = inject(DestroyRef);
+
+  isSideMenuOpen = this.asideToggleService.isOpen();
+
+  ngOnInit() {
+    this.asideToggleService.isAsideOpen$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(isOpen => {
+        this.isSideMenuOpen = isOpen;
+      });
+  }
+
+  closeSideMenu() {
+    this.asideToggleService.toggle();
+  }
 }

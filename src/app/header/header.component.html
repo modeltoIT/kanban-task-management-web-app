@@ -25,13 +25,17 @@
   </a>
   <div class="flex items-center justify-between flex-1 pl-4 tablet:pl-6 laptop:pl-8">
     <p
-      class="flex gap-1 items-center text-heading-l tablet:text-heading-xl text-black dark:text-white"
+      class="flex gap-1.5 items-center text-heading-l tablet:text-heading-xl text-black dark:text-white"
+      (click)="openSideMenu()"
     >
       <span>Platform Launch</span>
 
       <tui-icon
         [icon]="TUI_ICONS.CHEVRON_DOWN"
-        class="w-3 text-purple tablet:hidden -rotate-90"
+        class="w-3 text-purple tablet:hidden mt-1 transition-transform"
+        [ngClass]="{
+          'rotate-180': isSideMenuOpen,
+        }"
       />
     </p>
 

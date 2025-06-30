@@ -31,7 +31,7 @@ export class AsideComponent implements OnInit {
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
   }
 
-  toggleSideMenu(){
+  toggleSideMenu() {
     this.asideToggleService.toggle();
   }
 }
