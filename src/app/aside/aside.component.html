@@ -1,7 +1,7 @@
 <!--Implement resize changing w-[300px] to width="someWidth" connect to header logo--->
 <ng-container>
   <aside
-    class="fixed top-16 bottom-0 left-0 z-20 overflow-y-auto flex flex-col justify-between border-r border-light-lines dark:border-dark-lines bg-white dark:bg-dark-grey w-[260px] tablet:w-[261px] laptop:w-[300px] pt-6 tablet:pt-9 laptop:pt-[52px] pb-5 tablet:pb-8 transition-transform duration-200 ease-in"
+    class="fixed tablet:relative z-20 h-full overflow-y-auto flex flex-col justify-between border-r border-light-lines dark:border-dark-lines bg-white dark:bg-dark-grey w-[260px] tablet:w-[261px] laptop:w-[300px] pt-24 tablet:pt-24 laptop:pt-[116px] pb-5 tablet:pb-8 transition-transform duration-200 ease-in"
     [ngClass]="{
       '-translate-x-full': !isAsideOpen(),
     }"
